@@ -11,10 +11,10 @@ namespace SeleniumSpecFlowC
         [SetUp]
         public void Setup()
         {
-            // Initialize ChromeDriver (use WebDriverManager for auto-setup)
+            // Initialize ChromeDriver
             _driver = new ChromeDriver();
 
-            // Navigate to Google
+            // Navigate to the testing page
             _driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/");
 
             // Maximize the browser window (optional)

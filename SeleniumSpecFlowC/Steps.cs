@@ -1,7 +1,7 @@
 namespace SeleniumSpecFlowC
 {
     public class Tests
-        //git adding verification in comments 1
+         //changing the comments 
     {
         [SetUp]
         public void Setup()

@@ -33,6 +33,17 @@ namespace SeleniumSpecFlowC
             // Assert the new page loads
             Assert.That(_driver.Url, Does.Contain("/abtest"));
         }
+
+        [Test]
+        public void AddRemoveElements() 
+        {
+            _driver.FindElement(By.XPath(
+                "//a[text()='Add/Remove Elements' and @href='/add_remove_elements/']"
+            )).Click();
+
+            Assert.That(_driver.Url, Does.Contain("/add_remove_elements/"));
+        }
+
         [TearDown]
         public void TearDown()
         {

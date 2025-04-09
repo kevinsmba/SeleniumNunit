@@ -1,6 +1,5 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using NUnit.Framework;
 
 namespace SeleniumSpecFlowC
 {
@@ -8,6 +7,8 @@ namespace SeleniumSpecFlowC
          //changing the comments 
     {
         private IWebDriver _driver;
+        private ActionsHeroApp _actions;
+
         [SetUp]
         public void Setup()
         {
@@ -24,23 +25,14 @@ namespace SeleniumSpecFlowC
         [Test]
         public void ABTesting()
         {
-            // Using XPath with text + href
-            IWebElement link = _driver.FindElement(By.XPath(
-                "//a[text()='A/B Testing' and @href='/abtest']"
-            ));
-            link.Click();
-
-            // Assert the new page loads
+            _actions.ClickAbTestingButton();
             Assert.That(_driver.Url, Does.Contain("/abtest"));
         }
 
         [Test]
         public void AddRemoveElements() 
         {
-            _driver.FindElement(By.XPath(
-                "//a[text()='Add/Remove Elements' and @href='/add_remove_elements/']"
-            )).Click();
-
+            _actions.ClickAddRemoveElementButton();
             Assert.That(_driver.Url, Does.Contain("/add_remove_elements/"));
         }
 

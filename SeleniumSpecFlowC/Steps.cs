@@ -12,14 +12,11 @@ namespace SeleniumSpecFlowC
         [SetUp]
         public void Setup()
         {
-            // Initialize ChromeDriver
             _driver = new ChromeDriver();
-
-            // Navigate to the testing page
             _driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/");
-
-            // Maximize the browser window (optional)
             _driver.Manage().Window.Maximize();
+
+            _actions = new ActionsHeroApp(_driver);
         }
 
         [Test]
@@ -36,10 +33,10 @@ namespace SeleniumSpecFlowC
             Assert.That(_driver.Url, Does.Contain("/add_remove_elements/"));
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            _driver.Close();
-        }
+    //    [TearDown]
+    //    public void TearDown()
+    //    {
+    //        _driver.Close();
+    //    }
     }
 }

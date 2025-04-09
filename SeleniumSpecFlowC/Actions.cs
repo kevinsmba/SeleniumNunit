@@ -11,17 +11,17 @@ namespace SeleniumSpecFlowC
     {
         private readonly IWebDriver _driver;
 
-        public ActionsHeroApp(IWebDriver driver)
+        public ActionsHeroApp(IWebDriver driver) 
         {
             _driver = driver;
         }
         public void ClickAbTestingButton() 
         {
-            _driver.FindElement(PagesHeroApp.AbTestingButton);
+            _driver.FindElement(PagesHeroApp.AbTestingButton).Click();
         }
         public void ClickAddRemoveElementButton()
         {
-            _driver.FindElement(PagesHeroApp.AddRemoveElementsButton);
+            _driver.FindElement(PagesHeroApp.AddRemoveElementsButton).Click();
         }
     }
 }

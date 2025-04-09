@@ -2,7 +2,7 @@
 
 namespace SeleniumSpecFlowC
 {
-    public static class PagesHeroApp
+    public class PagesHeroApp
     {
         public static By AbTestingButton => By.XPath(
                 "//a[text()='A/B Testing' and @href='/abtest']"
